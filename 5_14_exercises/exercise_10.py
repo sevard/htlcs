@@ -10,7 +10,7 @@ def find_hypot(side_a, side_b):
     """ Calculate hypotenuse length based on side lengths """
 
     sum_of_sides = (side_a ** 2) + (side_b ** 2)
-    hypot = sum_of_sides ** 0.5 # calculate the sqrt 
+    hypot = sum_of_sides ** 0.5  # calculate the sqrt
     return hypot
 
 
