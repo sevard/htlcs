@@ -7,13 +7,13 @@
 # Formula to find the hypotenuse is sqrt( (a ** 2) + (b ** 2) )
 
 def find_hypot(side_a, side_b):
-    """ Calculate hypotenuse based on side lengths """
+    """ Calculate hypotenuse length based on side lengths """
 
-    sides = (side_a ** 2) + (side_b ** 2)
-    hypot = sides ** 0.5
+    sum_of_sides = (side_a ** 2) + (side_b ** 2)
+    hypot = sum_of_sides ** 0.5 # calculate the sqrt 
     return hypot
 
 
-if __name__ == '__main__':
-
-    print(find_hypot(10, 12))
+assert find_hypot(10, 12) == 15.620499351813308
+assert find_hypot(0.7087, 0.5504) == 0.8973270585466595
+assert find_hypot(0.1, 0.1) == 0.14142135623730953
