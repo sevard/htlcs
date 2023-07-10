@@ -24,35 +24,21 @@ from exercise_10 import find_hypot
 # Task for Exerice 12
 # Extend the program so that the sides can be given to the function in any order
 
-def get_bigger(x, y):
-
-    if x > y:
-        return x
-    else:
-        return y
-
-
-def is_rightangled(a, b, c, debug=False):
+def is_rightangled(side_a, side_b, side_c):
     """ Given triangle sides determine whether it is a RIGHT triangle """
 
-    longest_side = get_bigger(get_bigger(a, b), c)
-    triangle_sides = [a, b, c]
+    triangle_sides = [side_a, side_b, side_c]
+    longest_side = max(triangle_sides)
     triangle_sides.remove(longest_side)
 
     hypot = find_hypot(*triangle_sides)
 
     if abs(hypot - longest_side) < 0.000001:
-        if debug:
-            print(f"abs(h - c): {abs(hypot - longest_side)}")
-            print(f"{hypot} == {longest_side} (h is approximately eq to c)")
         return True
-
-    if debug:
-        print(F"{hypot} (h) != {c} (c)")
 
     return False
 
 
-result = is_rightangled(10, 15.620499, 12, True)
+result = is_rightangled(10, 15.620499, 12)
 
 print(result)
